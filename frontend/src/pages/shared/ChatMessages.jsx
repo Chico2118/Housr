@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import API_URL from "../../config";
+import API_URL from "../../env";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../../components/common/Navbar";
 import { useAuth } from "../../context/AuthContext";

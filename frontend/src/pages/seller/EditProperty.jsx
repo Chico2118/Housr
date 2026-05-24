@@ -9,7 +9,7 @@ import {
   HiLocationMarker,
   HiX,
 } from "react-icons/hi";
-import API_URL from "../../config";
+import API_URL from "../../env";
 import { useAuth } from "../../context/AuthContext";
 import { editPropertyStyles as s } from "../../assets/dummyStyles";
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import API_URL from "../../config";
+import API_URL from "../../env";
 import { useAuth } from "../../context/AuthContext";
 import {
   HiOutlineUser,

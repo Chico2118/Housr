@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import axios from "axios";
 import Navbar from "../../components/common/Navbar";
-import API_URL from "../../config";
+import API_URL from "../../env";
 import { useAuth } from "../../context/AuthContext";
 import { loginStyles as s } from "../../assets/dummyStyles";
 

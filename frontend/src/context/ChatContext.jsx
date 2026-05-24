@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { io } from "socket.io-client";
 import { useAuth } from "./AuthContext";
-import API_URL from "../config";
+import API_URL from "../env";
 
 const ChatContext = createContext();
 
