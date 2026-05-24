@@ -24,20 +24,9 @@ const PORT = 5000;
 //Database connection
 connectDB();
 
-//middlewares
-const allowedOrigins = [
-  "http://localhost:5173",
-].filter(Boolean);
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: true,
     credentials: true,
   })
 );
@@ -64,7 +53,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: true,
     methods: ["GET", "POST"],
   },
 });
