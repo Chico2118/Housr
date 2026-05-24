@@ -188,8 +188,12 @@ export const forgotPassword = async (req, res) => {
         user.resetPasswordExpire = resetPasswordExpire;
         await user.save();
 
-        const clientUrl = "http://localhost:5173";
-        const resetUrl = `${clientUrl}/reset-password/${resetToken}`;
+        const clientUrl = (process.env.CLIENT_URL || "http://localhost:5173").replace(/\/$/, "");
+        const useHashRouter = (process.env.CLIENT_USE_HASH_ROUTER || "true").toLowerCase() === "true";
+        const resetPath = useHashRouter
+            ? `/#/reset-password/${resetToken}`
+            : `/reset-password/${resetToken}`;
+        const resetUrl = `${clientUrl}${resetPath}`;
         const message = `
             <h2>Password Reset Request</h2>
             <p>You requested a password reset. Please click on the link below to reset your password:</p>
